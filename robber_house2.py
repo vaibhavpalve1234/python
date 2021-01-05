@@ -28,19 +28,20 @@ Constraints:
 
 def robberHouse(nums):
 
-    if len(nums)== 0:
-            return 0
-    elif len(nums)== 1:
-        return nums[0]
-    elif len(nums)== 2:
-        return max(nums)
-    return max([rob_helper(nums[:-1]), rob_helper(nums[1:])]) 
-    # nums(:-1) =[1,2,3] nums[1:]=[2,3,1]
-    
-def rob_helper(nums) :    
     if len(nums) == 0:
         return 0
-    
+    elif len(nums) == 1:
+        return nums[0]
+    elif len(nums) == 2:
+        return max(nums)
+    return max([rob_helper(nums[:-1]), rob_helper(nums[1:])])
+    # nums(:-1) =[1,2,3] nums[1:]=[2,3,1]
+
+
+def rob_helper(nums):
+    if len(nums) == 0:
+        return 0
+
     M = [0 for n in range(len(nums))]
     for i in range(len(nums)):
         val = M[i-2] if i-2 >= 0 else 0
@@ -49,7 +50,6 @@ def rob_helper(nums) :
 
 
 if __name__ == "__main__":
-    array = [1,2,3,1]
+    array = [1, 2, 3, 1]
     n = len(array)
     print(robberHouse(array))
-
