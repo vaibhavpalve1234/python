@@ -1,4 +1,4 @@
-# problem given an arra find the max sum contineous subarray 
+# problem given an arr find the max sum contineous subarray 
 # [2, 5, -10, 7, 8]
 # 12 => [2, 5, -10, 7, 8]
 # 15 =>[7, 8]
